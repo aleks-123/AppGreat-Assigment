@@ -1,0 +1,64 @@
+.container {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 60vh;
+  overflow-y: auto;
+  background-color: #f7f5e4;
+  padding-top: 30px;
+  font-size: 2rem;
+}
+
+li {
+  background-color: #fef3c7;
+  padding: 20px 15px;
+  border-left: 5px solid #f9b208;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:hover {
+  transform: scale(1.01);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.noteContent {
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.6rem;
+}
+
+.editButton {
+  background-color: #008cba;
+}
+
+.editButton:hover {
+  background-color: #007bb5;
+}
+
+.deleteButton {
+  background-color: #f44336;
+}
+
+.deleteButton:hover {
+  background-color: #da190b;
+}
