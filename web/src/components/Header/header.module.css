@@ -1,0 +1,14 @@
+.header {
+  background-color: #f9b208;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
