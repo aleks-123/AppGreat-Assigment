@@ -2,11 +2,18 @@ require('dotenv').config({ path: './config/.env' });
 
 const express = require('express');
 const cors = require('cors');
+const notes = require('./controller/noteController');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.get('/notes', notes.getAll);
+app.get('/notes/:id', notes.getOne);
+app.post('/notes', notes.create);
+app.patch('/notes/:id', notes.update);
+app.delete('/notes/:id', notes.delete);
 
 app.listen(process.env.PORT, (err) => {
   if (err) {
