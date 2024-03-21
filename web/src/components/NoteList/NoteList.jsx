@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   fetchNotes,
   createNote,
@@ -13,10 +13,17 @@ const NoteList = () => {
   const [notes, setNotes] = useState([]);
   const [error, setError] = useState('');
   const [editingNote, setEditingNote] = useState(null);
+  const listEndRef = useRef(null);
 
+  const scrollToBottom = () => {
+    listEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   useEffect(() => {
     loadNotes();
   }, []);
+  useEffect(() => {
+    scrollToBottom(); // Scroll to bottom whenever notes change
+  }, [notes]);
 
   const loadNotes = async () => {
     try {
@@ -72,6 +79,7 @@ const NoteList = () => {
             </div>
           </li>
         ))}
+        <div ref={listEndRef} />
       </ul>
       <NoteForm
         note={editingNote}
